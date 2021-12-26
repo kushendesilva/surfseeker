@@ -7,7 +7,7 @@ export default {
     owner: "kushenthimira",
     privacy: "public",
     platforms: ["ios", "android"],
-    version: "0.1.0-alpha",
+    version: "0.1.1-alpha",
     orientation: "portrait",
     icon: "./assets/icon.png",
     splash: {
