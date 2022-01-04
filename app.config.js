@@ -7,9 +7,9 @@ export default {
     owner: "kushenthimira",
     privacy: "public",
     platforms: ["ios", "android"],
-    version: "0.1.1-alpha",
+    version: "0.1.2-alpha",
     orientation: "portrait",
-    icon: "./assets/icon.png",
+    icon: "./assets/logo.png",
     splash: {
       image: "./assets/splash.png",
       resizeMode: "cover",
@@ -27,7 +27,7 @@ export default {
       package: "npc.cipher.surfseeker",
       adaptiveIcon: {
         foregroundImage: "./assets/logo.png",
-        backgroundColor: "#008cff",
+        backgroundColor: "#ffffff",
       },
     },
     extra: {
