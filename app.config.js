@@ -6,8 +6,8 @@ export default {
     slug: "surfseeker",
     owner: "kushenthimira",
     privacy: "public",
-    platforms: ["ios", "android"],
-    version: "0.1.2-alpha",
+    platforms: ["android"],
+    version: "0.1.3-alpha",
     orientation: "portrait",
     icon: "./assets/logo.png",
     splash: {

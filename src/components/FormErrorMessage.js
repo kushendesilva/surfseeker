@@ -1,22 +1,21 @@
 import React from "react";
-import { StyleSheet, Text } from "react-native";
-
-import { Colors } from "../config";
+import { StyleSheet } from "react-native";
+import { Text } from "@ui-kitten/components";
 
 export const FormErrorMessage = ({ error, visible }) => {
   if (!error || !visible) {
     return null;
   }
 
-  return <Text style={styles.errorText}>{error}</Text>;
+  return (
+    <Text style={styles.errorText} status="danger" category="label">
+      {error}
+    </Text>
+  );
 };
 
 const styles = StyleSheet.create({
   errorText: {
     marginLeft: 15,
-    color: Colors.red,
-    fontSize: 16,
-    marginVertical: 8,
-    fontWeight: "600",
   },
 });

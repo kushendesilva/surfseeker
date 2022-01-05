@@ -1,5 +1,6 @@
 import React, { useCallback } from "react";
-import { Pressable, Text, StyleSheet } from "react-native";
+import { Pressable } from "react-native";
+import { Button as RNButton } from "@ui-kitten/components";
 
 import { Colors } from "../config";
 
@@ -18,9 +19,15 @@ export const Button = ({
 
   if (borderless) {
     return (
-      <Pressable onPress={onPress} style={_style}>
-        <Text style={styles.borderlessButtonText}>{title}</Text>
-      </Pressable>
+      <RNButton
+        size="medium"
+        onPress={onPress}
+        style={_style}
+        appearance="ghost"
+        status="info"
+      >
+        {title}
+      </RNButton>
     );
   }
 
@@ -30,10 +37,3 @@ export const Button = ({
     </Pressable>
   );
 };
-
-const styles = StyleSheet.create({
-  borderlessButtonText: {
-    fontSize: 16,
-    color: Colors.blue,
-  },
-});

@@ -59,7 +59,7 @@ export const SignupScreen = ({ navigation }) => {
               {/* Input fields */}
               <TextInput
                 name="email"
-                leftIconName="email"
+                leftIconName="email-outline"
                 placeholder="Enter email"
                 autoCapitalize="none"
                 keyboardType="email-address"
@@ -72,7 +72,7 @@ export const SignupScreen = ({ navigation }) => {
               <FormErrorMessage error={errors.email} visible={touched.email} />
               <TextInput
                 name="password"
-                leftIconName="key-variant"
+                leftIconName="lock-outline"
                 placeholder="Enter password"
                 autoCapitalize="none"
                 autoCorrect={false}
@@ -90,7 +90,7 @@ export const SignupScreen = ({ navigation }) => {
               />
               <TextInput
                 name="confirmPassword"
-                leftIconName="key-variant"
+                leftIconName="lock-outline"
                 placeholder="Enter password"
                 autoCapitalize="none"
                 autoCorrect={false}

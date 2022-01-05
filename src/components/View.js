@@ -1,15 +1,16 @@
-import React from 'react';
-import { View as RNView, StyleSheet } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import React from "react";
+import { View as RNView, StyleSheet } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { Layout } from "@ui-kitten/components";
 
 export const View = ({ isSafe, style, children }) => {
   const insets = useSafeAreaInsets();
 
   if (isSafe) {
     return (
-      <RNView style={{ paddingTop: insets.top, ...style }}>{children}</RNView>
+      <Layout style={{ paddingTop: insets.top, ...style }}>{children}</Layout>
     );
   }
 
-  return <RNView style={StyleSheet.flatten(style)}>{children}</RNView>;
+  return <Layout style={StyleSheet.flatten(style)}>{children}</Layout>;
 };

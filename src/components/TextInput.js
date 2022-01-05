@@ -31,7 +31,7 @@ export const TextInput = ({
           name={leftIconName}
           size={22}
           color={Colors.mediumGray}
-          style={{ marginRight: 10 }}
+          style={{ marginRight: 10, marginTop: 2.5 }}
         />
       ) : null}
       <RNTextInput
@@ -50,7 +50,7 @@ export const TextInput = ({
             name={rightIcon}
             size={22}
             color={Colors.mediumGray}
-            style={{ marginRight: 10 }}
+            style={{ marginRight: 10, marginTop: 2.5 }}
           />
         </Button>
       ) : null}

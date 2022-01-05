@@ -7,7 +7,7 @@
 
 <h3 align="left">Downloads</h3>
 
-- 📱 Downloadable APK available <a href="https://github.com/kushenthimira/surfseeker/releases/download/v0.1.1-alpha/surfseeker.apk" target="blank">**here**</a>
+- 📱 Downloadable APK available <a href="https://github.com/kushenthimira/surfseeker/releases/download/v0.1.3-alpha/surfseeker.apk" target="blank">**here**</a>
 
 <h3 align="left">Socials</h3>
 <p align="left">

@@ -24,7 +24,6 @@ export const LoginScreen = ({ navigation }) => {
     <>
       <View isSafe style={styles.container}>
         <KeyboardAwareScrollView enableOnAndroid={true}>
-          {/* LogoContainer: consits app logo and screen title */}
           <View style={styles.logoContainer}>
             <Logo uri={Images.logo} />
             <Text style={styles.screenTitle}>Welcome back!</Text>
@@ -49,7 +48,7 @@ export const LoginScreen = ({ navigation }) => {
                 {/* Input fields */}
                 <TextInput
                   name="email"
-                  leftIconName="email"
+                  leftIconName="email-outline"
                   placeholder="Enter email"
                   autoCapitalize="none"
                   keyboardType="email-address"
@@ -65,7 +64,7 @@ export const LoginScreen = ({ navigation }) => {
                 />
                 <TextInput
                   name="password"
-                  leftIconName="key-variant"
+                  leftIconName="lock-outline"
                   placeholder="Enter password"
                   autoCapitalize="none"
                   autoCorrect={false}
@@ -152,7 +151,6 @@ const styles = StyleSheet.create({
     fontWeight: "700",
   },
   borderlessButtonContainer: {
-    marginTop: 16,
     alignItems: "center",
     justifyContent: "center",
   },

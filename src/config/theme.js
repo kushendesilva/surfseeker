@@ -6,3 +6,10 @@ export const Colors = {
   mediumGray: "#6e6869",
   red: "#fc5c65",
 };
+
+import React from "react";
+
+export const ThemeContext = React.createContext({
+  theme: "light",
+  toggleTheme: () => {},
+});

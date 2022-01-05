@@ -1,13 +1,12 @@
 import React from "react";
-import { ActivityIndicator, StyleSheet } from "react-native";
-
-import { Colors } from "../config";
+import { StyleSheet } from "react-native";
 import { View } from "./View";
+import { Spinner } from "@ui-kitten/components";
 
 export const LoadingIndicator = () => {
   return (
     <View style={styles.container}>
-      <ActivityIndicator size="large" color={Colors.orange} />
+      <Spinner status="info" size="large" />
     </View>
   );
 };
