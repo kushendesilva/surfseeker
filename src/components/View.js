@@ -1,5 +1,5 @@
 import React from "react";
-import { View as RNView, StyleSheet } from "react-native";
+import { StyleSheet, StatusBar } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Layout } from "@ui-kitten/components";
 
@@ -8,7 +8,10 @@ export const View = ({ isSafe, style, children }) => {
 
   if (isSafe) {
     return (
-      <Layout style={{ paddingTop: insets.top, ...style }}>{children}</Layout>
+      <Layout style={{ paddingTop: insets.top, ...style }}>
+        <StatusBar backgroundColor="white" barStyle="dark-content" />
+        {children}
+      </Layout>
     );
   }
 
