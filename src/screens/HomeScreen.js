@@ -5,28 +5,11 @@ import { Searchbar } from "react-native-paper";
 import { Button, Icon, Text, Layout } from "@ui-kitten/components";
 
 import { signOut } from "firebase/auth";
-import { View, CityCard } from "../components";
+import { View, CityCard, BeachCard } from "../components";
 import { auth, Colors } from "../config";
+import { cityList } from "../config/database";
 
 export const HomeScreen = () => {
-  const cityList = [
-    {
-      id: 1,
-      city: "Mount Lavinia",
-      district: "Colombo",
-    },
-    {
-      id: 2,
-      city: "Hikkaduwa",
-      district: "Galle",
-    },
-    {
-      id: 3,
-      city: "Beruwala",
-      district: "Kalutara",
-    },
-  ];
-
   const handleLogout = () => {
     signOut(auth).catch((error) => console.log("Error logging out: ", error));
   };
@@ -50,6 +33,7 @@ export const HomeScreen = () => {
           padding: "1%",
         }}
       />
+      <BeachCard />
       <FlatList
         ListHeaderComponent={
           <Layout

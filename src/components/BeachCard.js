@@ -1,81 +1,64 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
 import { Icon, Card, Text } from "@ui-kitten/components";
-import { Chip, Caption } from "react-native-paper";
+import { Colors } from "../config";
+import { Chip } from "./Chip";
+export const BeachCard = (props) => (
+  <Card
+    status="info"
+    style={{
+      justifyContent: "center",
+      marginHorizontal: "5%",
+      marginVertical: "1%",
+    }}
+  >
+    <View>
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "center",
+          alignItems: "center",
+          marginBottom: "3%",
+        }}
+      >
+        <Icon
+          style={{ width: 30, height: 30 }}
+          fill={Colors.blue}
+          name="pin-outline"
+        />
 
-function AppStock(props) {
-  const NewIcon = (props) => <Icon {...props} name="plus-outline" />;
-
-  return (
-    <Card
-      status="success"
-      style={{
-        justifyContent: "center",
-        marginHorizontal: "5%",
-        marginVertical: "1%",
-      }}
-    >
-      <View>
-        <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <Icon
-            style={{ width: 30, height: 30 }}
-            fill="black"
-            name="cube-outline"
-          />
-          <Text style={styles.Text}>mdkmed</Text>
-
-          <Icon
-            style={{ width: 30, height: 30 }}
-            fill="black"
-            name="checkmark-circle-2-outline"
+        <Text style={styles.Text}>Mount Lavinia Beach</Text>
+      </View>
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "center",
+        }}
+      >
+        <View>
+          <Chip title="Rating" sub="10/10" />
+          <Chip
+            title="Hourly Rate"
+            unitL=" Rs."
+            sub="2500"
+            name="credit-card-outline"
           />
         </View>
-        <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "center",
-            alignItems: "center",
-            marginVertical: "5%",
-          }}
-        >
-          <Chip style={{ marginRight: "3%" }}>
-            <Caption style={{ fontSize: 8 }}>Stock: </Caption>
-            250
-          </Chip>
-          <Chip>
-            <Caption style={{ fontSize: 8 }}>Wholesale Price </Caption>
-            Rs.250
-          </Chip>
-        </View>
-        <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "space-evenly",
-          }}
-        >
-          <Chip>
-            <Caption style={{ fontSize: 8 }}>A Category</Caption> Rs.250
-          </Chip>
-          <Chip>
-            <Caption style={{ fontSize: 8 }}>B Category</Caption> Rs.250
-          </Chip>
-          <Chip>
-            <Caption style={{ fontSize: 8 }}>C Category</Caption> Rs.250
-          </Chip>
+        <View>
+          <Chip title="City" sub="Mount Lavinia" name="compass-outline" />
+          <Chip
+            title="Distance"
+            sub="25"
+            unitR=" KM"
+            name="navigation-outline"
+          />
         </View>
       </View>
-    </Card>
-  );
-}
-
-export default AppStock;
+    </View>
+  </Card>
+);
 
 const styles = StyleSheet.create({
-  Text: { fontSize: 16, marginHorizontal: "2%" },
+  Text: { fontSize: 16, marginHorizontal: "2%", fontWeight: "bold" },
+  Chip: { margin: "3%" },
 });

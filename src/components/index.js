@@ -6,6 +6,7 @@ import { Button } from "./Button";
 import { FormErrorMessage } from "./FormErrorMessage";
 import { LoadingIndicator } from "./LoadingIndicator";
 import { CityCard } from "./CityCard";
+import { BeachCard } from "./BeachCard";
 
 export {
   View,
@@ -16,4 +17,5 @@ export {
   FormErrorMessage,
   LoadingIndicator,
   CityCard,
+  BeachCard,
 };
