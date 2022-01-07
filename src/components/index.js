@@ -7,6 +7,7 @@ import { FormErrorMessage } from "./FormErrorMessage";
 import { LoadingIndicator } from "./LoadingIndicator";
 import { CityCard } from "./CityCard";
 import { BeachCard } from "./BeachCard";
+import { AccountCard } from "./AccountCard";
 
 export {
   View,
@@ -18,4 +19,5 @@ export {
   LoadingIndicator,
   CityCard,
   BeachCard,
+  AccountCard,
 };

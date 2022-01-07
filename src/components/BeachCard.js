@@ -5,7 +5,7 @@ import { Colors } from "../config";
 import { Chip } from "./Chip";
 export const BeachCard = (props) => (
   <Card
-    status="info"
+    status="primary"
     style={{
       justifyContent: "center",
       marginHorizontal: "5%",

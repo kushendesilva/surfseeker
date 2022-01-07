@@ -15,3 +15,8 @@ export const cityList = [
     district: "Kalutara",
   },
 ];
+
+export const userData = {
+  email: "admin@surfseeker.com",
+  name: "Admin",
+};
