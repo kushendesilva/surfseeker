@@ -3,11 +3,17 @@ import { View, StyleSheet } from "react-native";
 import { Icon, Card, Text } from "@ui-kitten/components";
 import { Colors } from "../config";
 import { Chip } from "./Chip";
-export const BeachCard = (props) => (
+export const BeachCard = ({
+  beach,
+  city,
+  distance,
+  district,
+  price,
+  rating,
+}) => (
   <Card
     status="primary"
     style={{
-      justifyContent: "center",
       marginHorizontal: "5%",
       marginVertical: "1%",
     }}
@@ -27,7 +33,7 @@ export const BeachCard = (props) => (
           name="pin-outline"
         />
 
-        <Text style={styles.Text}>Mount Lavinia Beach</Text>
+        <Text style={styles.Text}>{beach}</Text>
       </View>
       <View
         style={{
@@ -36,19 +42,19 @@ export const BeachCard = (props) => (
         }}
       >
         <View>
-          <Chip title="Rating" sub="10/10" />
+          <Chip title="Rating" sub={rating} unitR="/10" />
           <Chip
             title="Hourly Rate"
             unitL=" Rs."
-            sub="2500"
+            sub={price}
             name="credit-card-outline"
           />
         </View>
         <View>
-          <Chip title="City" sub="Mount Lavinia" name="compass-outline" />
+          <Chip title="City" sub={city} name="compass-outline" />
           <Chip
             title="Distance"
-            sub="25"
+            sub={distance}
             unitR=" KM"
             name="navigation-outline"
           />

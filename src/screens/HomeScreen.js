@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { FlatList, StyleSheet } from "react-native";
 
 import {
@@ -10,10 +10,11 @@ import {
   Button,
 } from "@ui-kitten/components";
 import { Searchbar } from "react-native-paper";
+import { collection, getDocs } from "firebase/firestore/lite";
 
 import { signOut } from "firebase/auth";
-import { auth, Colors } from "../config";
-import { cityList, userData } from "../config/database";
+import { auth, db, Colors } from "../config";
+import { userData } from "../config/database";
 import { View, CityCard, BeachCard, AccountCard } from "../components";
 import AppRenderIf from "../config/AppRenderIf";
 
@@ -23,6 +24,18 @@ export const HomeScreen = () => {
   const handleLogout = () => {
     signOut(auth).catch((error) => console.log("Error logging out: ", error));
   };
+
+  const [beaches, setBeaches] = useState([]);
+  const beachesCollectionRef = collection(db, "beaches");
+
+  useEffect(() => {
+    const getBeaches = async () => {
+      const data = await getDocs(beachesCollectionRef);
+      setBeaches(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    };
+
+    getBeaches();
+  }, []);
 
   const [searchQuery, setSearchQuery] = React.useState("");
   const onChangeSearch = (query) => setSearchQuery(query);
@@ -48,8 +61,25 @@ export const HomeScreen = () => {
               padding: "1%",
             }}
           />
-          <BeachCard />
           <FlatList
+            data={beaches}
+            keyExtractor={(item, index) => item + index}
+            renderItem={({ item }) => (
+              <BeachCard
+                beach={item.beach}
+                city={item.city}
+                distance={item.distance}
+                price={item.price}
+                rating={item.rating}
+              />
+            )}
+          />
+          <FlatList
+            data={beaches}
+            keyExtractor={(item, index) => item + index}
+            renderItem={({ item }) => (
+              <CityCard city={item.city} district={item.district} />
+            )}
             ListHeaderComponent={
               <Layout
                 style={{
@@ -72,13 +102,6 @@ export const HomeScreen = () => {
                 </Button>
               </Layout>
             }
-            data={cityList}
-            keyExtractor={(city) => city.id.toString()}
-            renderItem={({ item }) => (
-              <>
-                <CityCard city={item.city} district={item.district} />
-              </>
-            )}
           />
         </Layout>
       )}

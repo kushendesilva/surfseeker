@@ -7,7 +7,7 @@ export default {
     owner: "kushenthimira",
     privacy: "public",
     platforms: ["android"],
-    version: "0.1.3-alpha",
+    version: "0.2.0-beta",
     orientation: "portrait",
     icon: "./assets/logo.png",
     splash: {
@@ -21,7 +21,7 @@ export default {
     assetBundlePatterns: ["**/*"],
     ios: {
       supportsTablet: true,
-      bundleIdentifier: "com.cipher.posify",
+      bundleIdentifier: "npc.cipher.posify",
     },
     android: {
       package: "npc.cipher.surfseeker",

@@ -1,16 +1,7 @@
 import React from "react";
-import { Pressable } from "react-native";
-import {
-  Layout,
-  Button,
-  Avatar,
-  Icon,
-  Card,
-  Text,
-} from "@ui-kitten/components";
-import { Colors } from "../config";
+import { Layout, Button, Icon, Card, Text } from "@ui-kitten/components";
 
-export const AccountCard = ({ name, email, onPress, onEditPress }) => {
+export const AccountCard = ({ email, onPress, onEditPress }) => {
   const LogoutIcon = (props) => <Icon {...props} name="log-out-outline" />;
   const EditIcon = (props) => <Icon {...props} name="edit-2-outline" />;
 
@@ -53,12 +44,8 @@ export const AccountCard = ({ name, email, onPress, onEditPress }) => {
             name="person-outline"
           />
         </Layout>
-
-        <Text style={{ fontWeight: "bold" }} category="h6">
-          {name}
-        </Text>
-        <Text style={{ margin: "1%" }} category="label">
-          {email}
+        <Text style={{ margin: "1%", fontWeight: "bold" }} category="h6">
+          {email.charAt(0).toUpperCase() + email.slice(1)}
         </Text>
       </Layout>
       <Layout
